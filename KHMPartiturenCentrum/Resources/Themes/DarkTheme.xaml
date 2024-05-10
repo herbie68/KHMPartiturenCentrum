@@ -348,5 +348,10 @@
 	<SolidColorBrush x:Key="MediaPlayer.Background" Color="Transparent" />
 	<SolidColorBrush x:Key="MediaPlayer.Borderbrush" Color="Transparent" />
 	<!--#endregion-->
+	
+	<SolidColorBrush x:Key="Logo.Foreground" Color="#f9643d" />
+	<SolidColorBrush x:Key="Logo.Background" Color="White" />
+	<SolidColorBrush x:Key="Logo.Text.Foreground" Color="Black" />
+
 
 </ResourceDictionary>

@@ -154,6 +154,33 @@ namespace KHM.Helpers
 
 			return Regex.IsMatch( _email, @"^[^@\s]+@[^@\s]+\.[^@\s]+$", RegexOptions.IgnoreCase, TimeSpan.FromMilliseconds( 250 ) );
 		}
-		#endregion
-	}
+        #endregion
+
+        #region Get user Id based on its e-mail
+        /// <summary>
+        /// Get the UserId based on users e-mail
+        /// </summary>
+        /// <param name="_login">The loginname (email).</param>
+        /// <param name="_userId">The user id.</param>
+        /// <returns>A bool</returns>
+        public static int GetUserId(string _login)
+        {
+            if (String.IsNullOrEmpty(_login)) { return -1; }
+
+            ObservableCollection<UserModel> _users = DBCommands.GetUsers();
+
+            foreach (var user in _users)
+            {
+                if (user.UserEmail != null)
+                {
+                    if (user.UserEmail.Equals(_login, StringComparison.CurrentCultureIgnoreCase))
+                    {
+                        return user.UserId;
+                    }
+                }
+            }
+            return -1;
+        }
+        #endregion
+    }
 }

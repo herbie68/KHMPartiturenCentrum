@@ -1,0 +1,71 @@
+﻿<ResourceDictionary
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:converters="clr-namespace:KNZV.Converters">
+
+	<!--#region TextBlocks-->
+	<!--#region PageTextBlock-->
+	<Style x:Key="pageTextBlock" TargetType="TextBlock">
+		<Setter Property="Background" Value="{StaticResource pageTextBlockBackground}" />
+		<Setter Property="Foreground" Value="{StaticResource pageTextBlockForeground}" />
+		<Setter Property="Margin" Value="3" />
+		<Setter Property="VerticalAlignment" Value="Center" />
+		<Setter Property="FontSize" Value="12" />
+		<Setter Property="FontWeight" Value="Normal" />
+	</Style>
+	<!--#endregion-->
+
+	<!--#region Hidden TextBlock-->
+	<Style x:Key="HiddenTextBlock" TargetType="TextBlock">
+		<Setter Property="Visibility" Value="Collapsed" />
+		<Setter Property="Margin" Value="2" />
+		<Setter Property="FontSize" Value="10" />
+		<Setter Property="FontWeight" Value="Normal" />
+	</Style>
+	<!--#endregion-->
+
+	<!--#region Default TextBlock-->
+	<Style x:Key="DefaultTextBlockStyle" TargetType="{x:Type TextBlock}">
+		<Setter Property="HorizontalAlignment" Value="Left" />
+		<Setter Property="VerticalAlignment" Value="Center" />
+		<Setter Property="FontWeight" Value="Bold" />
+		<Setter Property="FontSize" Value="12" />
+		<Setter Property="IsEnabled" Value="{Binding ElementName=EnableEdit, Path=Text}" />
+	</Style>
+	<!--#endregion-->
+
+	<!--#region MetaData TextBlock-->
+	<Style x:Key="MetaDataTextBlockStyle" TargetType="{x:Type TextBlock}">
+		<Setter Property="HorizontalAlignment" Value="Left" />
+		<Setter Property="VerticalAlignment" Value="Center" />
+		<Setter Property="FontWeight" Value="Bold" />
+		<Setter Property="Margin" Value="5,0,0,0" />
+		<Setter Property="FontSize" Value="12" />
+	</Style>
+	<!--#endregion-->
+
+	<!--#region Password Reset Help TextBlock-->
+	<Style x:Key="PasswordReset.TextBlock" TargetType="{x:Type TextBlock}">
+		<Setter Property="TextWrapping" Value="NoWrap"/>
+		<Setter Property="TextTrimming" Value="None"/>
+		<Setter Property="FontWeight" Value="Bold" />
+		<Setter Property="HorizontalAlignment" Value="Center" />
+		<Setter Property="FontSize" Value="14" />
+		<Setter Property="FontFamily" Value="Montserrat"/>
+		<Setter Property="Foreground" Value="{DynamicResource PasswordReset.Explain.Foreground}"/>	
+	</Style>
+	<!--#endregion-->
+	
+	<!--#region Password Reset Wrong Code TextBlock-->
+	<Style x:Key="PasswordReset.WrongCode.TextBlock" TargetType="{x:Type TextBlock}">
+		<Setter Property="TextWrapping" Value="NoWrap"/>
+		<Setter Property="TextTrimming" Value="None"/>
+		<Setter Property="FontWeight" Value="Bold" />
+		<Setter Property="HorizontalAlignment" Value="Center" />
+		<Setter Property="FontSize" Value="14" />
+		<Setter Property="FontFamily" Value="Montserrat"/>
+		<Setter Property="Foreground" Value="{DynamicResource PasswordReset.Error.Foreground}"/>
+	</Style>
+	<!--#endregion-->
+	<!--#endregion-->
+</ResourceDictionary>

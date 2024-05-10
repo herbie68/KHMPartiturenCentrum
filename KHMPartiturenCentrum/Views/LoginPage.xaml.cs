@@ -85,4 +85,11 @@ public partial class LoginPage : Window
 			btnLogin.RaiseEvent( new RoutedEventArgs( System.Windows.Controls.Primitives.ButtonBase.ClickEvent ) );
 		}
 	}
+
+    private void btnResetPassword(object sender, RoutedEventArgs e)
+    {
+        PasswordReset passwordReset = new(tbUserName.Text);
+        passwordReset.Show();
+        this.Close();
+    }
 }

@@ -156,6 +156,20 @@
                     <Image Grid.Column="0" Source="../Resources/Images/lock.png" Height="21"/>
                 </Grid>
 
+                <StackPanel
+                    Margin="0,15,0,0"
+                    HorizontalAlignment="Center"
+                    Orientation="Horizontal">
+                    <Button Margin="8,0,0,0"
+                        Cursor="Hand" VerticalAlignment="Center" VerticalContentAlignment="Center"
+                        FontFamily="Montserrat"
+                        FontSize="12" Click="btnResetPassword"
+                        FontWeight="Medium"
+                        Foreground="White" Background="Transparent"
+                        Content="Wachtwoord opnieuw instellen"/>
+                </StackPanel>
+
+
                 <TextBox x:Name="tbInvalidLogin" Text="Verkeerde gebruikersnaam en/of wachtwoord" Foreground="Red" FontSize="14" Visibility="Collapsed" Background="#1B1448" Margin ="0,20" HorizontalAlignment="Center"/>
 
                 <Button x:Name="btnLogin"                          
