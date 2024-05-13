@@ -1,19 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Windows;
-
-using MySql.Data.MySqlClient;
+﻿using System.Windows.Forms;
 
 namespace KHM.Helpers
 {
 	public static class Library
 	{
-		public static void UpdateFiles ( int _scoreId, string _fieldName, int _fileExists )
-			{
+		public static void UpdateFiles( int _scoreId, string _fieldName, int _fileExists )
+		{
 			// If file does not exist anymore value should be set to -1
 			var sqlQuery = $"" +
 				$"{DBNames.SqlUpdate}{DBNames.Database}.{DBNames.ScoresTable} " +
@@ -23,24 +15,24 @@ namespace KHM.Helpers
 				$"{DBNames.FilesFieldNameId} = @{DBNames.FilesFieldNameId}";
 
 			try
-				{
+			{
 				using MySqlConnection connection = new(DBConnect.ConnectionString);
-				connection.Open ();
+				connection.Open();
 
 				using MySqlCommand cmd = new(sqlQuery, connection);
 
 				cmd.Connection = connection;
 				cmd.CommandText = sqlQuery;
-				cmd.Parameters.AddWithValue ( $"@{DBNames.FilesFieldNameId}", _scoreId );
-				cmd.Parameters.AddWithValue ( $"@{_fieldName}", _fileExists );
+				cmd.Parameters.AddWithValue( $"@{DBNames.FilesFieldNameId}", _scoreId );
+				cmd.Parameters.AddWithValue( $"@{_fieldName}", _fileExists );
 
-				cmd.ExecuteNonQuery ();
-				}
-			catch ( MySql.Data.MySqlClient.MySqlException ex )
-				{
-				System.Windows.Forms.MessageBox.Show ( "Error " + ex.Number + " is opgetreden: " + ex.Message,
-					"Error", ( MessageBoxButtons ) MessageBoxButton.OK, ( MessageBoxIcon ) MessageBoxImage.Error );
-				}
+				cmd.ExecuteNonQuery();
 			}
+			catch ( MySql.Data.MySqlClient.MySqlException ex )
+			{
+				System.Windows.Forms.MessageBox.Show( "Error " + ex.Number + " is opgetreden: " + ex.Message,
+					"Error", ( MessageBoxButtons ) MessageBoxButton.OK, ( MessageBoxIcon ) MessageBoxImage.Error );
+			}
+		}
 	}
 }

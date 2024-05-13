@@ -1,9 +1,4 @@
-﻿using System.Data;
-using System.IO;
-using System.Windows;
-using System.Windows.Forms;
-
-using MySql.Data.MySqlClient;
+﻿using System.Windows.Forms;
 
 using static KHM.App;
 

@@ -1059,25 +1059,25 @@ public class DBCommands
 
 		if ( modifiedUser != null )
 		{
-			if ( modifiedUser [ 0 ].UserName != "" && modifiedUser[0].UserName != null)
+			if ( modifiedUser [ 0 ].UserName != "" && modifiedUser [ 0 ].UserName != null )
 			{ sqlQuery += DBNames.UsersFieldNameUserName + " = @" + DBNames.UsersFieldNameUserName; }
 
-			if ( modifiedUser [ 0 ].UserFullName != "" && modifiedUser[0].UserFullName != null)
+			if ( modifiedUser [ 0 ].UserFullName != "" && modifiedUser [ 0 ].UserFullName != null )
 			{ sqlQuery += ", " + DBNames.UsersFieldNameFullName + " = @" + DBNames.UsersFieldNameFullName; }
 
-			if ( modifiedUser [ 0 ].UserEmail != "" && modifiedUser[0].UserEmail != null)
+			if ( modifiedUser [ 0 ].UserEmail != "" && modifiedUser [ 0 ].UserEmail != null )
 			{ sqlQuery += ", " + DBNames.UsersFieldNameLogin + " = @" + DBNames.UsersFieldNameLogin; }
 
-			if ( modifiedUser [ 0 ].UserRoleId != 0)
+			if ( modifiedUser [ 0 ].UserRoleId != 0 )
 			{ sqlQuery += ", " + DBNames.UsersFieldNameRoleId + " = @" + DBNames.UsersFieldNameRoleId; }
 
-			if ( modifiedUser [ 0 ].UserPassword != "" && modifiedUser[0].UserPassword != null)
+			if ( modifiedUser [ 0 ].UserPassword != "" && modifiedUser [ 0 ].UserPassword != null )
 			{ sqlQuery += ", `" + DBNames.UsersFieldNamePW + "` = @" + DBNames.UsersFieldNamePW; }
 
-			if ( modifiedUser [ 0 ].CoverSheetFolder != "" && modifiedUser[0].CoverSheetFolder != null)
+			if ( modifiedUser [ 0 ].CoverSheetFolder != "" && modifiedUser [ 0 ].CoverSheetFolder != null )
 			{ sqlQuery += ", " + DBNames.UsersFieldNameCoverSheetFolder + " = @" + DBNames.UsersFieldNameCoverSheetFolder; }
 
-			if ( modifiedUser [ 0 ].DownloadFolder != "" && modifiedUser[0].DownloadFolder != null)
+			if ( modifiedUser [ 0 ].DownloadFolder != "" && modifiedUser [ 0 ].DownloadFolder != null )
 			{ sqlQuery += ", " + DBNames.UsersFieldNameDownloadFolder + " = @" + DBNames.UsersFieldNameDownloadFolder; }
 		}
 

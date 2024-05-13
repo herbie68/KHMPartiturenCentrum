@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace KHM.Helpers
+﻿namespace KHM.Helpers
 {
-    public static class FileTypes
-    {
-	    public enum FileType
-	    {
+	public static class FileTypes
+	{
+		public enum FileType
+		{
 			ork,
 			orp,
 			tok,
@@ -34,6 +28,6 @@ namespace KHM.Helpers
 			uitvoering,
 			tot,
 			totaal
-			}
-    }
+		}
+	}
 }

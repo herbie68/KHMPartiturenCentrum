@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace KHM.Models
-	{
+﻿namespace KHM.Models
+{
 	public class FileIndexModel
-		{
-		public int Id{get; set;}
-		public int ScoreId {get; set;}
+	{
+		public int Id { get; set; }
+		public int ScoreId { get; set; }
 		public int MuseScoreORPId { get; set; }
 		public int MuseScoreORKId { get; set; }
 		public int MuseScoreTOPId { get; set; }
@@ -35,5 +29,5 @@ namespace KHM.Models
 		public int MP3SOL2VoiceId { get; set; }
 		public int MP3TOTVoiceId { get; set; }
 		public int MP3UITVVoiceId { get; set; }
-		}
 	}
+}

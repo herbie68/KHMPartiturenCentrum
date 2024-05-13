@@ -1,6 +1,4 @@
-﻿using System.Windows.Controls.Primitives;
-
-using Syncfusion.Windows.PdfViewer;
+﻿using Syncfusion.Windows.PdfViewer;
 
 using Button = System.Windows.Controls.Button;
 namespace KHM.Views

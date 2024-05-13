@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace KHM.Models;
+﻿namespace KHM.Models;
 
 public class ScoreModel
 {

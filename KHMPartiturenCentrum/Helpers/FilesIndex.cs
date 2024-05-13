@@ -1,9 +1,4 @@
-﻿using System.Windows;
-using System.Windows.Forms;
-
-using KHM.Models;
-
-using MySql.Data.MySqlClient;
+﻿using System.Windows.Forms;
 
 namespace KHM.Helpers
 {

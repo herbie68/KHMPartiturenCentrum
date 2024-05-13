@@ -1,6 +1,4 @@
-﻿using MySql.Data.MySqlClient;
-
-namespace KHM.Helpers
+﻿namespace KHM.Helpers
 {
 	public static class GetFileInfo
 	{
