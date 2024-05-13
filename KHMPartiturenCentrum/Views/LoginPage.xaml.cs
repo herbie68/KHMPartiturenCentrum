@@ -86,10 +86,46 @@ public partial class LoginPage : Window
 		}
 	}
 
-    private void btnResetPassword(object sender, RoutedEventArgs e)
-    {
-        PasswordReset passwordReset = new(tbUserName.Text);
-        passwordReset.Show();
-        this.Close();
-    }
+	private void btnResetPassword( object sender, RoutedEventArgs e )
+	{
+		var _userName = "";
+
+		//Check if a username has been entered
+		if ( tbUserName.Text.Length > 0 )
+		{
+			//Check if entered username is an e-mail address otherwise get the E-Mail address for the specified user
+			if ( tbUserName.Text.Contains( "@" ) )
+			{
+				//Username is an e-mail address
+				_userName = tbUserName.Text.ToLower();
+			}
+			else
+			{
+				// Get the users e-mail address base on the entered login name
+				_userName = Login.GetUserEmail( tbUserName.Text.ToLower() );
+			}
+		}
+
+		PasswordReset passwordReset = new(_userName);
+		passwordReset.Show();
+		this.Close();
+	}
+
+	private void PressedEnterOnUsername( object sender, KeyEventArgs e )
+	{
+		if ( e.Key == Key.Enter )
+		{
+			if ( !string.IsNullOrEmpty( tbPassword.Password ) )
+			{
+				// Theare is a password enterend
+				btnLogin.RaiseEvent( new RoutedEventArgs( System.Windows.Controls.Primitives.ButtonBase.ClickEvent ) );
+			}
+			else
+			{
+				// No password entered, therefor set focus to PasswordBox
+				tbPassword.Focus();
+			}
+
+		}
+	}
 }

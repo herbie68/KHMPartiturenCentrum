@@ -42,6 +42,22 @@ namespace KHM.Helpers
 		}
 		#endregion
 
+		#region Get E-mail with username login
+		public static string GetUserEmail( string _login )
+		{
+			ObservableCollection<UserModel> _users = DBCommands.GetUsers();
+
+			var _validUserMail = "invaliduser";
+
+			foreach ( UserModel usr in _users )
+			{
+				if ( usr.UserName == _login ) { _validUserMail = usr.UserEmail; }
+			}
+
+			return _validUserMail;
+		}
+		#endregion
+
 		#region Check valid username
 		public static bool CheckUserName( string userName, int userId )
 		{
@@ -154,33 +170,33 @@ namespace KHM.Helpers
 
 			return Regex.IsMatch( _email, @"^[^@\s]+@[^@\s]+\.[^@\s]+$", RegexOptions.IgnoreCase, TimeSpan.FromMilliseconds( 250 ) );
 		}
-        #endregion
+		#endregion
 
-        #region Get user Id based on its e-mail
-        /// <summary>
-        /// Get the UserId based on users e-mail
-        /// </summary>
-        /// <param name="_login">The loginname (email).</param>
-        /// <param name="_userId">The user id.</param>
-        /// <returns>A bool</returns>
-        public static int GetUserId(string _login)
-        {
-            if (String.IsNullOrEmpty(_login)) { return -1; }
+		#region Get user Id based on its e-mail
+		/// <summary>
+		/// Get the UserId based on users e-mail
+		/// </summary>
+		/// <param name="_login">The loginname (email).</param>
+		/// <param name="_userId">The user id.</param>
+		/// <returns>A bool</returns>
+		public static int GetUserId( string _login )
+		{
+			if ( String.IsNullOrEmpty( _login ) ) { return -1; }
 
-            ObservableCollection<UserModel> _users = DBCommands.GetUsers();
+			ObservableCollection<UserModel> _users = DBCommands.GetUsers();
 
-            foreach (var user in _users)
-            {
-                if (user.UserEmail != null)
-                {
-                    if (user.UserEmail.Equals(_login, StringComparison.CurrentCultureIgnoreCase))
-                    {
-                        return user.UserId;
-                    }
-                }
-            }
-            return -1;
-        }
-        #endregion
-    }
+			foreach ( var user in _users )
+			{
+				if ( user.UserEmail != null )
+				{
+					if ( user.UserEmail.Equals( _login, StringComparison.CurrentCultureIgnoreCase ) )
+					{
+						return user.UserId;
+					}
+				}
+			}
+			return -1;
+		}
+		#endregion
+	}
 }

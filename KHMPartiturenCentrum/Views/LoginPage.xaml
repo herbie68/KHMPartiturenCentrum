@@ -132,7 +132,7 @@
 
                     <TextBox Grid.Column="1" x:Name="tbUserName"
                              FontSize="13" Style="{DynamicResource UserNameTextBox}"
-                             FontWeight="Medium"
+                             FontWeight="Medium" KeyDown="PressedEnterOnUsername"
                              FontFamily="Montserrat"                            
                              Width="250" ToolTip="Gebruikersnaam (of e-mail)"
                              Padding="3,0,0,0" Margin="3,0,0,0" TabIndex="0" Cursor="IBeam"/>

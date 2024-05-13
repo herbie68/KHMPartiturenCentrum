@@ -6,10 +6,10 @@
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
     <UseWindowsForms>True</UseWindowsForms>
-    <ApplicationIcon>Resources\Icons\applogo.ico</ApplicationIcon>
-    <Platforms>x64</Platforms>
-    <AssemblyVersion>24.3.19</AssemblyVersion>
-    <FileVersion>24.3.19</FileVersion>
+    <ApplicationIcon>Resources\Icons\appicon.ico</ApplicationIcon>
+    <Platforms>x64;x86;ARM32;ARM64</Platforms>
+    <AssemblyVersion>24.5.13</AssemblyVersion>
+    <FileVersion>24.5.13</FileVersion>
     <SupportedOSPlatformVersion>8.0</SupportedOSPlatformVersion>
     <PlatformTarget>x64</PlatformTarget>
     <Copyright>HN Software development - voor Koninklijk Hengelo's Mannenkoor</Copyright>
@@ -18,6 +18,7 @@
     <SelfContained>true</SelfContained>
 	<RuntimeIdentifier>win-x64</RuntimeIdentifier>
     <PublishReadyToRun>true</PublishReadyToRun>
+    <BaseOutputPath>C:\DevOps\hnsoftwaredevelopment\KHMPartiturenCentrum\Builds</BaseOutputPath>
   </PropertyGroup>
   
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release'">
@@ -94,7 +95,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="Resources\Icons\applogo.ico" />
+    <Content Include="Resources\Icons\appicon.ico" />
   </ItemGroup>
 
   <ItemGroup>
@@ -253,7 +254,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Resources\Images\logo.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="Resources\Images\packagelogo.png">
       <Pack>True</Pack>

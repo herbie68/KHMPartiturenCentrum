@@ -10,8 +10,14 @@ public partial class PasswordReset : Window
 	{
 		InitializeComponent();
 
+		//Fill in the already entered e-mail address from the login page
 		tbUserName.Text = _userName;
+
+		// Set focus to the TextBox
 		tbUserName.Focus();
+
+		// Put cursor at the end of the existing text
+		tbUserName.SelectionStart = tbUserName.Text.Length;
 	}
 
 	#region Button Close | Restore | Minimize 
@@ -188,11 +194,14 @@ public partial class PasswordReset : Window
 	{
 		ObservableCollection<UserModel> ModifiedUser = [];
 
-		var _checkPassword = Helper.HashPepperPassword(pbPassword.Password, tbUserName.Text);
+		tbName.Text = tbUserName.Text.Contains( "@" ) ? Login.CheckEmailLogin( tbUserName.Text ) : tbName.Text;
+
+		var _checkPassword = Helper.HashPepperPassword(pbPassword.Password, tbName.Text);
 		var _userId = Login.GetUserId(tbUserName.Text);
 
 		App.ScoreUsers.SelectedUserId = _userId;
 		App.ScoreUsers.SelectedUserPassword = _checkPassword;
+		App.ScoreUsers.SelectedUserName = tbName.Text;
 		App.ScoreUsers.SelectedUserEmail = tbUserName.Text;
 
 		ModifiedUser.Add( new UserModel
